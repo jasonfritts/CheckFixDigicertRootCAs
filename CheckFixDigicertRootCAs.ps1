@@ -1,13 +1,18 @@
 # Verify "DigiCert Global Root CA" exists
-Get-ChildItem -path 'Cert:\*A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436' -Recurse
+$rootCA = Get-ChildItem -path 'Cert:\*A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436' -Recurse
 
 # Verify "DigiCert Global Root G2" exists
-Get-ChildItem -Path 'Cert:\*df3c24f9bfd666761b268073fe06d1cc8d4f82a4' -Recurse
+$rootG2CA = Get-ChildItem -Path 'Cert:\*df3c24f9bfd666761b268073fe06d1cc8d4f82a4' -Recurse
 
 
 ################################################
 # Download and trust DigiCert Global Root CA   #
 ################################################
+
+if($rootCA){Write-Host -ForegroundColor Green "DigiCert Global Root CA with thumbprint A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 found"}
+if(!$rootCA){
+
+Write-Host -ForegroundColor Yellow "DigiCert Global Root CA with thumbprint A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 not found"
 
 ## Set up variables and objects
 $url = "https://cacerts.digicert.com/DigiCertGlobalRootCA.crt"
@@ -25,10 +30,20 @@ $store.Close()
 ## clean up
 Remove-Item $filename
 
+Write-Host -ForegroundColor Green "DigiCert Global Root CA with thumbprint A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 installed"
+}
+
 
 ################################################
 # Download and trust DigiCert Global Root G2   #
 ################################################
+
+if($rootG2CA){Write-Host -ForegroundColor Green "DigiCert Global Root G2 CA with thumbprint df3c24f9bfd666761b268073fe06d1cc8d4f82a4 found"}
+if(!$rootG2CA){
+
+Write-Host -ForegroundColor Yellow "DigiCert Global Root G2 CA with thumbprint df3c24f9bfd666761b268073fe06d1cc8d4f82a4 not found"
+
+
 
 ## Set up variables and objects
 $url = "https://cacerts.digicert.com/DigiCertGlobalRootG2.crt"
@@ -45,3 +60,9 @@ $store.Close()
 
 ## clean up
 Remove-Item $filename
+
+Write-Host -ForegroundColor Green "DigiCert Global Root G2 CA with thumbprint df3c24f9bfd666761b268073fe06d1cc8d4f82a4 installed"
+
+
+}
+
