@@ -1,4 +1,4 @@
-# Check Digicert Root CAs
+# Check DigiCert Root CAs
 Download script @ https://github.com/jasonfritts/CheckFixDigicertRootCAs/blob/main/CheckFixDigicertRootCAs.ps1
 
 This PowerShell script checks if the following two Digicert Root CA certificates are trusted by local machine and if not downloads and installs them from https://www.digicert.com/kb/digicert-root-certificates.htm
