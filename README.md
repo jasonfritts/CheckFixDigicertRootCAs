@@ -1,4 +1,4 @@
-This script was created to assist in resolving Azure AD SSPR password writeback certificate trust issues.  Please reference https://docs.microsoft.com/en-us/azure/security/fundamentals/tls-certificate-changes for information on why certificate changes have occured and what has changed as well as a full list of certificates that need to be trusted for Azure services.
+This script was created to assist in resolving Azure AD SSPR password writeback certificate trust issues to https://*.servicebus.windows.net endpoints.  Please reference https://docs.microsoft.com/en-us/azure/security/fundamentals/tls-certificate-changes for information on why certificate changes have occured and what has changed as well as a full list of certificates that need to be trusted for Azure services.
 
 # Check DigiCert Root CAs
 
