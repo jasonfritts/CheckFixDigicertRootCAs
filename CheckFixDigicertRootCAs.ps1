@@ -30,7 +30,7 @@ $store.Close()
 ## clean up
 Remove-Item $filename
 
-Write-Host -ForegroundColor Green "DigiCert Global Root CA with thumbprint A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 installed"
+Write-Host -ForegroundColor Green "DigiCert Global Root CA with thumbprint A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436 installed. You may need to restart AAD Connect Server, or 'Microsoft Azure AD Sync' service manually to correct service bus issues once installed."
 }
 
 
@@ -61,8 +61,9 @@ $store.Close()
 ## clean up
 Remove-Item $filename
 
-Write-Host -ForegroundColor Green "DigiCert Global Root G2 CA with thumbprint df3c24f9bfd666761b268073fe06d1cc8d4f82a4 installed"
+Write-Host -ForegroundColor Green "DigiCert Global Root G2 CA with thumbprint df3c24f9bfd666761b268073fe06d1cc8d4f82a4 installed. You may need to restart AAD Connect Server, or 'Microsoft Azure AD Sync' service manually to correct service bus issues once installed."
 
 
 }
 
+Read-Host "Press any key to quit"
