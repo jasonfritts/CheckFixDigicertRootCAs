@@ -1,4 +1,7 @@
+This script was created to assist in resolving Azure AD SSPR password writeback certificate trust issues.  Please reference https://docs.microsoft.com/en-us/azure/security/fundamentals/tls-certificate-changes for information on why certificate changes have occured and what has changed as well as a full list of certificates that need to be trusted for Azure services.
+
 # Check DigiCert Root CAs
+
 Download script @ https://github.com/jasonfritts/CheckFixDigicertRootCAs/blob/main/CheckFixDigicertRootCAs.ps1
 
 This PowerShell script checks if the following two Digicert Root CA certificates are trusted by local machine and if not downloads and installs them from https://www.digicert.com/kb/digicert-root-certificates.htm
